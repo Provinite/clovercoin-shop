@@ -1,0 +1,25 @@
+{
+  "name": "clovercoin-shop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "prov <provinite@gmail.com>",
+  "license": "NONE",
+  "private": true,
+  "devDependencies": {
+    "@types/react-dom": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "react-dom": "^16.12.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.11",
+    "react": "^16.12.0"
+  }
+}
