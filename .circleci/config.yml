@@ -4,18 +4,31 @@ jobs:
     docker:
       - image: circleci/node:dubnium
     steps:
+      # Fetch code from github into .
       - checkout
+      # If a cache exists for this version of dependencies use it, otherwise
+      # use any recent cache as a base
       - restore_cache:
           keys:
             - node-v1-{{ checksum "yarn.lock" }}
             - node-v1-
+      # Install dependencies
       - run:
           name: Install Dependencies
           command: yarn install
+      # First test: lint the source code
       - run:
           name: Lint
           command: yarn lint
+      # Build the app
+      - run:
+          name: Build
+          command: yarn build
+      # Save dependencies of the successful build
       - save_cache:
           paths:
             - ./node_modules
           key: node-v1-{{ checksum "yarn.lock" }}
+      # Store bundled app
+      - store_artifacts:
+          path: ./dist
