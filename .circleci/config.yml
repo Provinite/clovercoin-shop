@@ -9,9 +9,13 @@ jobs:
           keys:
             - node-v1-{{ checksum "yarn.lock" }}
             - node-v1-
-      - run: yarn install
-      - run: yarn lint
+      - run:
+          name: Install Dependencies
+          command: yarn install
+      - run:
+          name: Lint
+          command: yarn lint
       - save_cache:
-        paths:
-          - ./node_modules
-        key: node-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+          key: node-v1-{{ checksum "yarn.lock" }}
