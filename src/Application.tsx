@@ -3,7 +3,7 @@ import { FunctionComponent, useState } from "react";
 import {
   PayPalButton,
   createSelectOption,
-  PayPalButtonProps,
+  PayPalButtonProps
 } from "./PayPalButton";
 
 const BUTTONS: { [button: string]: Omit<PayPalButtonProps, "username"> } = {
