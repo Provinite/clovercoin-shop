@@ -6,9 +6,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys:
-          - node-v1-{{ checksum "yarn.lock" }}
-          - node-v1-
+          keys:
+            - node-v1-{{ checksum "yarn.lock" }}
+            - node-v1-
       - run: yarn install
       - run: yarn lint
       - save_cache:
