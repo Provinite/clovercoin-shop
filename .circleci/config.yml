@@ -2,11 +2,16 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: alpine:3.7
+      - image: circleci/node:dubnium
     steps:
       - checkout
-      - run:
-            name: Code Has Arrived
-            command: |
-              ls -al
-              echo '^^^That should look familiar^^^'
+      - restore_cache:
+        keys:
+          - node-v1-{{ checksum "yarn.lock" }}
+          - node-v1-
+      - run: yarn install
+      - run: yarn lint
+      - save_cache:
+        paths:
+          - ./node_modules
+        key: node-v1-{{ checksum "yarn.lock" }}
