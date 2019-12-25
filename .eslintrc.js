@@ -19,6 +19,10 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       { allowExpressions: true }
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { functions: false }
     ]
   },
   settings: {
