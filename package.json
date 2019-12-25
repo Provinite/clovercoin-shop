@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "build": "parcel build src/index.html --public-url ./",
     "lint": "eslint . --ext .js --ext .ts --ext .tsx --ext .jsx"
   },
   "devDependencies": {
