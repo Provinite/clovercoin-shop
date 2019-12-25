@@ -42,7 +42,7 @@ export const Application: FunctionComponent = () => {
     <>
       <input
         type="text"
-        onChange={(e): void => setUsername(e.target.value)}
+        onChange={e => setUsername(e.target.value)}
         value={username}
       />
       {Object.entries(BUTTONS).map(([key, props]) => (
